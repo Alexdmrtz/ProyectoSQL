@@ -4,6 +4,8 @@
 
 CREATE DATABASE project_exilius;
 
+USE project_exilius;
+
 CREATE TABLE IF NOT EXISTS Clientes 
 (
     id_cliente INT PRIMARY KEY AUTO_INCREMENT,
@@ -98,4 +100,3 @@ CREATE TABLE IF NOT EXISTS Polizas_Ramo
     FOREIGN KEY (poliza_id) REFERENCES Polizas(id_poliza),
     FOREIGN KEY (ramo_id) REFERENCES Ramos(id_ramo)
 );
-
