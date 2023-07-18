@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS Clientes
     apellido VARCHAR(50) NOT NULL,
     direccion VARCHAR(100),
     telefono VARCHAR(20),
-    email VARCHAR(100) UNIQUE
+    email VARCHAR(120) UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS Tipo_Cobertura 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS Compañias
     nombre VARCHAR(100) NOT NULL,
     direccion VARCHAR(100),
     telefono VARCHAR(20),
-    email VARCHAR(100) UNIQUE
+    email VARCHAR(120) UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS Sucursales 
