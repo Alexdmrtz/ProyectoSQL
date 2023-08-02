@@ -4,7 +4,7 @@ DELIMITER $$
 
 -- Función para calcular el IVA de una póliza
 
--- Esta función acepta como parámetro el id_poliza y obtiene el monto de la prima de la póliza correspondiente. Luego, calcula el IVA aplicando un 16% sobre el monto de la prima y lo devuelve como resultado.
+-- Esta función acepta como parámetro el id_poliza y obtiene el monto de la prima de la póliza correspondiente. Luego, calcula el IVA aplicando un 21% sobre el monto de la prima y lo devuelve como resultado.
 
 CREATE FUNCTION CalcularIVA(poliza_id INT) RETURNS DECIMAL(10, 2) DETERMINISTIC
 BEGIN
