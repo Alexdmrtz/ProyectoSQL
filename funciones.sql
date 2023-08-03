@@ -16,3 +16,34 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
+
+-- Función para calcular el período de cobertura
+
+-- Esta función acepta tres parámetros: fecha_inicio que representa la fecha de inicio de la póliza, duracion que es la cantidad de días, meses o años que dura la cobertura, y unidad que especifica si la duración está en días, meses o años.
+
+DELIMITER $$
+
+CREATE FUNCTION CalcularPeriodoCobertura(fecha_inicio DATE, duracion INT, unidad VARCHAR(10)) 
+RETURNS DATE
+DETERMINISTIC
+BEGIN
+    DECLARE fecha_termino DATE;
+    
+    IF unidad = 'dias' THEN
+        SET fecha_termino = DATE_ADD(fecha_inicio, INTERVAL duracion DAY);
+    ELSEIF unidad = 'meses' THEN
+        SET fecha_termino = DATE_ADD(fecha_inicio, INTERVAL duracion MONTH);
+    ELSEIF unidad = 'años' THEN
+        SET fecha_termino = DATE_ADD(fecha_inicio, INTERVAL duracion YEAR);
+    ELSE
+        -- Opción inválida, devolver NULL o un valor por defecto según el caso.
+        RETURN NULL;
+    END IF;
+    
+    RETURN fecha_termino;
+END$$
+
+
+DELIMITER ;
