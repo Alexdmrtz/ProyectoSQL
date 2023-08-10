@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS Polizas
     monto_prima DECIMAL(10, 2) NOT NULL,
     cliente_id INT,
     tipo_cobertura_id INT,
+    unidad_duracion varchar(20) DEFAULT NULL,
     FOREIGN KEY (cliente_id) REFERENCES Clientes(id_cliente),
     FOREIGN KEY (tipo_cobertura_id) REFERENCES Tipo_Cobertura(id_tipo_cobertura)
 );
