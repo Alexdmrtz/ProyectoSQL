@@ -18,7 +18,7 @@ DELIMITER ;
 
 
 -- Stored Procedure 2: Insertar Registro
--- Este SP permitirá insertar registros en cualquiera de las tablas (Clientes, Siniestros, etc...).
+-- Permite insertar un nuevo registro en una tabla especificada de la base de datos (en este caso, principalmente en la tabla "Clientes") utilizando valores proporcionados como parámetros. El uso de la consulta SQL dinámica permite adaptarse a diferentes tablas y columnas sin necesidad de escribir consultas separadas para cada caso.
 
 DELIMITER $$
 
