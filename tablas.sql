@@ -33,8 +33,10 @@ CREATE TABLE IF NOT EXISTS Polizas
     cliente_id INT,
     tipo_cobertura_id INT,
     unidad_duracion varchar(20) DEFAULT NULL,
+    agente_id INT, -- Nueva columna para la relación con Agentes
     FOREIGN KEY (cliente_id) REFERENCES Clientes(id_cliente),
-    FOREIGN KEY (tipo_cobertura_id) REFERENCES Tipo_Cobertura(id_tipo_cobertura)
+    FOREIGN KEY (tipo_cobertura_id) REFERENCES Tipo_Cobertura(id_tipo_cobertura),
+    FOREIGN KEY (agente_id) REFERENCES Agentes(id_agente) -- Nueva referencia a Agentes
 );
 
 CREATE TABLE IF NOT EXISTS Siniestros 
