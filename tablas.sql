@@ -23,6 +23,23 @@ CREATE TABLE IF NOT EXISTS Tipo_Cobertura
     descripcion VARCHAR(100)
 );
 
+CREATE TABLE IF NOT EXISTS Agentes 
+(
+    id_agente INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    fecha_nacimiento DATE,
+    direccion VARCHAR(100),
+    telefono VARCHAR(20),
+    email VARCHAR(120) UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS Ramos 
+(
+    id_ramo INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS Polizas 
 (
     id_poliza INT PRIMARY KEY AUTO_INCREMENT,
@@ -32,11 +49,10 @@ CREATE TABLE IF NOT EXISTS Polizas
     monto_prima DECIMAL(10, 2) NOT NULL,
     cliente_id INT,
     tipo_cobertura_id INT,
-    unidad_duracion varchar(20) DEFAULT NULL,
-    agente_id INT, -- Nueva columna para la relación con Agentes
+    agente_id INT,
     FOREIGN KEY (cliente_id) REFERENCES Clientes(id_cliente),
     FOREIGN KEY (tipo_cobertura_id) REFERENCES Tipo_Cobertura(id_tipo_cobertura),
-    FOREIGN KEY (agente_id) REFERENCES Agentes(id_agente) -- Nueva referencia a Agentes
+    FOREIGN KEY (agente_id) REFERENCES Agentes(id_agente)
 );
 
 CREATE TABLE IF NOT EXISTS Siniestros 
@@ -57,17 +73,6 @@ CREATE TABLE IF NOT EXISTS Pagos
     FOREIGN KEY (poliza_id) REFERENCES Polizas(id_poliza)
 );
 
-CREATE TABLE IF NOT EXISTS Agentes 
-(
-    id_agente INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL,
-    apellido VARCHAR(50) NOT NULL,
-    fecha_nacimiento DATE,
-    direccion VARCHAR(100),
-    telefono VARCHAR(20),
-    email VARCHAR(120) UNIQUE
-);
-
 CREATE TABLE IF NOT EXISTS Compañias 
 (
     id_compañia INT PRIMARY KEY AUTO_INCREMENT,
@@ -86,13 +91,6 @@ CREATE TABLE IF NOT EXISTS Sucursales
     email VARCHAR(120) UNIQUE,
     compañia_id INT,
     FOREIGN KEY (compañia_id) REFERENCES Compañias(id_compañia)
-);
-
-
-CREATE TABLE IF NOT EXISTS Ramos 
-(
-    id_ramo INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Polizas_Ramo 
