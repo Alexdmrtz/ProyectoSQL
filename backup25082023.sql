@@ -1,3 +1,27 @@
+
+/*
+
+este es un Bacukp de las tablas: 
+- clientes
+- compañias
+- pagos
+
+de la base de datos Project Exilius.
+
+forma de uso:
+
+- crear la estructura de la base de datos, disponible en creacion_de_tablas_2.0 en el repositorio de github: https://github.com/Alexdmrtz/ProyectoSQL/blob/main/tablas.sql
+- agregar los datos (para verificar la informacion en las tablas anteriormente mencionadas), disponible en el mismo repositorio: https://github.com/Alexdmrtz/ProyectoSQL/blob/main/insercion_datos.sql
+
+dado que por restricciones de eliminacion de datos, no se podra truncar los datos de las tablas, en este caso se tiene que eliminar por completo la base de datos, y luego volver a ejecutar la creacion de la misma.
+una vez hecho esto, ejecutar la importacion del archivo backup, disponible tambien en el repositorio: https://github.com/Alexdmrtz/ProyectoSQL/blob/main/backup25082023.sql
+por ultimo, verificar que los datos de las tablas clientes, compañias, y pagos, se hayan restaurado correctamente.
+
+*/
+
+
+
+
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: project_exilius
