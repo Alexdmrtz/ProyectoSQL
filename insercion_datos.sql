@@ -75,6 +75,21 @@ INSERT INTO Agentes (nombre, apellido, fecha_nacimiento, direccion, telefono, em
 ('Ana', 'Acosta', '1991-07-20', 'Calle Colón 555, Rosario', '+54 9 341 999 8888', 'ana.acosta@example.com'),
 ('Gonzalo', 'Torres', '1994-02-28', 'Av. Corrientes 987, Buenos Aires', '+54 9 11 6666 5555', 'gonzalo.torres@example.com');
 
+INSERT INTO Coberturas (nombre, descripcion)
+VALUES
+    ('Cobertura de Salud', 'Cubre gastos médicos y hospitalarios'),
+    ('Cobertura de Automóvil', 'Cubre daños a vehículos'),
+    ('Cobertura de Hogar', 'Cubre daños a propiedades y contenido'),
+    ('Cobertura de Vida', 'Cubre en caso de fallecimiento'),
+    ('Cobertura de Viaje', 'Cubre gastos de viaje y cancelaciones');
+
+INSERT INTO Beneficiarios (nombre, apellido, direccion, telefono, email)
+VALUES
+    ('Juan', 'Pérez', '123 Calle Principal', '+123456789', 'juanperez@email.com'),
+    ('María', 'Gómez', '456 Avenida Secundaria', '+987654321', 'mariagomez@email.com'),
+    ('Carlos', 'López', '789 Calle Peatonal', '+555555555', 'carloslopez@email.com'),
+    ('Sofía', 'Martínez', '1010 Calle Residencial', '+111111111', 'sofiamartinez@email.com');
+
 
 INSERT INTO Compañias (nombre, direccion, telefono, email) VALUES
 ('Seguros Argentinos S.A.', 'Av. Libertador 1234, Buenos Aires', '+54 11 2222 3333', 'info@segurosargentinos.com'),
@@ -130,3 +145,30 @@ INSERT INTO Polizas_Ramo (poliza_id, ramo_id) VALUES
 (9, 10),
 (10, 3),
 (10, 5);
+
+
+INSERT INTO Reclamaciones (fecha, descripcion, poliza_id)
+VALUES
+    ('2023-01-15', 'Reclamación por accidente automovilístico', 1),
+    ('2023-03-20', 'Reclamación por daños en el hogar', 1),
+    ('2023-05-10', 'Reclamación por atención médica', 1),
+    ('2023-07-25', 'Reclamación por pérdida de equipaje', 1);
+
+
+INSERT INTO Coberturas_Poliza (poliza_id, cobertura_id)
+VALUES
+    (1, 1),
+    (1, 2);
+
+   
+INSERT INTO Polizas_Beneficiario (poliza_id, beneficiario_id)
+VALUES
+    (1, 1),
+    (1, 2);
+
+
+
+INSERT INTO Reclamaciones_Beneficiario (reclamacion_id, beneficiario_id)
+VALUES
+    (1, 1),
+    (1, 2);
